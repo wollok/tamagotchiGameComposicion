@@ -1,0 +1,73 @@
+import models.mascota.*
+import mocks.*
+
+describe "Mascota" {
+	const mascotaContenta = new Mascota()
+	const mascotaHambrienta = new Mascota()
+	const mascotaTriste = new Mascota()
+	
+	fixture {
+		mascotaContenta.poneteContento()
+		mascotaHambrienta.poneteHambriento()
+		mascotaTriste.poneteTriste()
+	}
+	
+	//COMER	
+	test "Al comer: si está hambriento se pone contento" {
+		mascotaHambrienta.come()
+		assert.that(mascotaHambrienta.estado().estaContento())
+	}
+		
+	test "Al comer: si está contento aumenta 1 de felicidad" {
+		mascotaContenta.come()
+		assert.equals(1, mascotaContenta.felicidad())
+	}
+		
+	test "Si esta triste no quiere comer" {
+		assert.throwsExceptionWithMessage("No quiero comer, estoy triste!", { mascotaTriste.come() })
+	}
+	
+	
+	//JUGAR SOLO	
+	test "Al jugar: si está contento aumenta 2 de felicidad" {
+		mascotaContenta.juga()
+		assert.equals(2, mascotaContenta.felicidad())
+	}
+		
+	test "Al jugar muchas veces: si está contento le da hambre" {
+		mascotaContenta.juga()
+		mascotaContenta.jugaCon(mascotaHambrienta)
+		mascotaContenta.juga()
+		assert.that(mascotaContenta.estado().estaHambriento())
+	}
+		
+	test "Al jugar: si está triste se pone contento" {
+		mascotaTriste.juga()
+		assert.that(mascotaTriste.estado().estaContento())
+	}
+		
+	test "Al jugar: si está hambriento baja 4 de felicidad" {
+		mascotaHambrienta.juga()
+		assert.equals(-4, mascotaHambrienta.felicidad())
+	}
+	
+	
+	//JUGAR ACOMPAÑADO	
+	test "Al jugar con alguien: si está hambriento no juegan" {
+		mascotaHambrienta.jugaCon(mascotaTrucha)
+		assert.equals(0, mascotaHambrienta.felicidad())
+		assert.notThat(mascotaTrucha.leDijeronQueJuegue())
+	}
+		
+	test "Al jugar con alguien: si está triste ambos se ponen contentos" {
+		mascotaTriste.jugaCon(mascotaTrucha)
+		assert.that(mascotaTriste.estado().estaContento())
+		assert.that(mascotaTrucha.leDijeronQueSePongaContento())
+	}
+		
+	test "Al jugar con alguien: si está contento el compañero juega solo y aumenta 4 de felicidad" {
+		mascotaContenta.jugaCon(mascotaTrucha)
+		assert.equals(4, mascotaContenta.felicidad())
+		assert.that(mascotaTrucha.leDijeronQueJuegue())
+	}
+}
