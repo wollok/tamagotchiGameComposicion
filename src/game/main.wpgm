@@ -20,11 +20,10 @@ program tamagotchi {
 		const colliders = game.colliders(mascota)
 		if (colliders.isEmpty()) 
 			throw new Exception("No hay nada aquí")
-		else
-			colliders.head().interactua(mascota)
+		colliders.head().interactua(mascota)
 	}
 	
-	game.whenCollideDo(mascota, { game.colliders(mascota).head().estaCerca() })
+	game.say(mascota, "Presiona ESPACIO para interactuar con los objetos")
 	
 	game.start()
 }
