@@ -15,7 +15,7 @@ describe "Mascota" {
 	//COMER	
 	test "Al comer: si está hambriento se pone contento" {
 		mascotaHambrienta.come()
-		assert.that(mascotaHambrienta.estado().estaContento())
+		assert.that(mascotaHambrienta.estaContento())
 	}
 		
 	test "Al comer: si está contento aumenta 1 de felicidad" {
@@ -38,12 +38,12 @@ describe "Mascota" {
 		mascotaContenta.juga()
 		mascotaContenta.jugaCon(mascotaHambrienta)
 		mascotaContenta.juga()
-		assert.that(mascotaContenta.estado().estaHambriento())
+		assert.that(mascotaContenta.estaHambriento())
 	}
 		
 	test "Al jugar: si está triste se pone contento" {
 		mascotaTriste.juga()
-		assert.that(mascotaTriste.estado().estaContento())
+		assert.that(mascotaTriste.estaContento())
 	}
 		
 	test "Al jugar: si está hambriento baja 4 de felicidad" {
@@ -61,7 +61,7 @@ describe "Mascota" {
 		
 	test "Al jugar con alguien: si está triste ambos se ponen contentos" {
 		mascotaTriste.jugaCon(mascotaTrucha)
-		assert.that(mascotaTriste.estado().estaContento())
+		assert.that(mascotaTriste.estaContento())
 		assert.that(mascotaTrucha.leDijeronQueSePongaContento())
 	}
 		

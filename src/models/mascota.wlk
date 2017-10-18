@@ -18,7 +18,11 @@ class Mascota {
 	method bajarFelicidad(cant) { nivelDeFelicidad -= cant }
 	
 	method felicidad() = nivelDeFelicidad
-	method estado() = estado
+	
+	//Testing
+	method estaContento() = estado.estaContento()
+	method estaHambriento() = estado.estaHambriento()
+	method estaTriste() = estado.estaTriste()
 	
 	//Wollok-Game
 	method imagen() = "tamagotchi-" + estado.nombre() + ".png"
