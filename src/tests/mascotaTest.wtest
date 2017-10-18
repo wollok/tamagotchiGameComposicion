@@ -36,7 +36,7 @@ describe "Mascota" {
 		
 	test "Al jugar muchas veces: si está contento le da hambre" {
 		mascotaContenta.juga()
-		mascotaContenta.jugaCon(mascotaHambrienta)
+		mascotaContenta.juga()
 		mascotaContenta.juga()
 		assert.that(mascotaContenta.estaHambriento())
 	}
