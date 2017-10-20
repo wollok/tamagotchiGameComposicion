@@ -26,4 +26,4 @@ La compañera hace que el Tamagotchi **juegue con ella**
 
 ### DESAFÍO
 
-#### Les dejamos el [enunciado de este ejercicio](https://docs.google.com/document/d/1jLvvIVhdqvE8F7HOyfrOz_fpYe8L7NKWC_fDKYup_2I/edit) y los desafiamos a [forkear](https://github.com/wollok/tamagotchi-game-composicion#fork-destination-box) el proyecto y agregar la parte BONUS al juego!
+#### Les dejamos el [enunciado de este ejercicio](https://docs.google.com/document/d/1jLvvIVhdqvE8F7HOyfrOz_fpYe8L7NKWC_fDKYup_2I/edit) y los desafiamos a agregar la parte BONUS al juego!
