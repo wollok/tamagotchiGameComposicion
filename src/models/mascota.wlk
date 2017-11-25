@@ -4,9 +4,15 @@ class Mascota {
 	var nivelDeFelicidad = 0
 	var estado = new Contento()
 	
-	method come() { estado.hacerQueComa(self) }
+	method come() { 
+		estado.hacerQueComa(self)
+		game.say(self, "Ñamm")
+	}
 	
-	method juga() { estado.hacerQueJuegue(self) }
+	method juga() { 
+		estado.hacerQueJuegue(self)
+		game.say(self, "Wiii")
+	}
 	
 	method jugaCon(otraMascota) { estado.hacerQueJuegueCon(self, otraMascota) }
 	
@@ -23,6 +29,10 @@ class Mascota {
 	method estaContento() = estado.estaContento()
 	method estaHambriento() = estado.estaHambriento()
 	method estaTriste() = estado.estaTriste()
+	
+	//Wollok-Game
+	method imagen() = estado.imagen()
+	method posicion() = game.center()
 }
 
 

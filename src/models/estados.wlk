@@ -29,6 +29,8 @@ class Contento inherits Estado {
 		companiero.juga()
 		mascota.aumentarFelicidad(4)
 	}
+	
+	method imagen() = "tamagotchi-contento.png"
 }
 
 class Hambriento inherits Estado {
@@ -46,6 +48,9 @@ class Hambriento inherits Estado {
 	method hacerQueJuegueCon(mascota, companiero) {
 		//No le pinta jugar con nadie
 	}
+	
+	
+	method imagen() = "tamagotchi-hambriento.png"
 }
 
 class Triste inherits Estado {
@@ -70,4 +75,6 @@ class Triste inherits Estado {
 	}	
 	
 	method haceMuchoQueEstaTriste() = (fechaInicio - new Date()) > 1
+	
+	method imagen() = "tamagotchi-triste.png"
 }
