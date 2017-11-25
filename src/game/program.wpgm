@@ -1,0 +1,25 @@
+import wollok.game.*
+import models.mascota.*
+import visuals.*
+
+program tamagotchi {
+	const mascota = new Mascota()
+	const companiero = new Mascota()
+	
+	game.width(10)
+	game.height(10)
+	game.ground("suelo.png")
+	
+	game.center().drawElement(mascota)
+//	game.origin().drawElement(companiero)
+	game.addVisual(joystick)
+	game.addVisual(plato)
+	game.addVisual(flecha)
+	
+	
+	J.onPressDo({ flecha.seleccionar(joystick) })
+	C.onPressDo({ flecha.seleccionar(plato) })
+	SPACE.onPressDo({ flecha.hazTuGracia(mascota) })
+	
+	game.start()
+}
