@@ -16,7 +16,7 @@ program tamagotchi {
 	game.addVisualIn(pozo, game.at(6, 6))
 	game.addVisualCharacterIn(mascota, game.center())
 	
-	SPACE.onPressDo { 
+	keyboard.space().onPressDo { 
 		const colliders = game.colliders(mascota)
 		if (colliders.isEmpty()) 
 			throw new Exception("No hay nada aquí")
