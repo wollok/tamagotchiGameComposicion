@@ -25,7 +25,7 @@ class Mascota {
 	method estaTriste() = estado.estaTriste()
 	
 	//Wollok-Game
-	method imagen() = "tamagotchi-" + estado.nombre() + ".png"
+	method image() = "tamagotchi-" + estado.nombre() + ".png"
 }
 
 

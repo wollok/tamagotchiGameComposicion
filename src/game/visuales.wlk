@@ -1,13 +1,13 @@
 import models.mascota.*
 
 object comida {
-	method imagen() = "comida.png"
+	method image() = "comida.png"
 	
 	method interactua(mascota) { mascota.come() }
 }
 
 object juego {
-	method imagen() = "juego.png"
+	method image() = "juego.png"
 	
 	method interactua(mascota) { mascota.juga() }
 }
@@ -15,11 +15,11 @@ object juego {
 object companiera inherits Mascota {
 	method interactua(mascota) { mascota.jugaCon(self) }
 	
-	override method imagen() = "companiera-" + super()
+	override method image() = "companiera-" + super()
 }
 
 object pozo {
-	method imagen() = "pozo.jpg"
+	method image() = "pozo.jpg"
 	
 	method interactua(mascota) { mascota.poneteTriste() }
 }

@@ -1,39 +1,35 @@
 class Estado {
-	const nombre
-	constructor (_nombre) { nombre = _nombre }
 	
-	method estaContento() = nombre == "contento"
-	method estaHambriento() = nombre == "hambriento"
-	method estaTriste() = nombre == "triste"
+	method estaContento() = self.nombre() == "contento"
+	method estaHambriento() = self.nombre()== "hambriento"
+	method estaTriste() = self.nombre()== "triste"
 	
-	method nombre() = nombre
+	method nombre()
 }
 
 class Contento inherits Estado {
+	var property nombre = "contento"
 	var cantVecesQueJugo = 0
-	
-	constructor () = super("contento")
 	
 	method hacerQueComa(mascota) { 
 		mascota.aumentarFelicidad(1)
 	}
 	
 	method hacerQueJuegue(mascota) {
-		cantVecesQueJugo++ 
+		cantVecesQueJugo+=1 
 		mascota.aumentarFelicidad(2)
 		if (cantVecesQueJugo > 2) mascota.poneteHambriento()
 	}
 	
 	method hacerQueJuegueCon(mascota, companiero) {
-		cantVecesQueJugo++ 
+		cantVecesQueJugo+=1 
 		companiero.juga()
 		mascota.aumentarFelicidad(4)
 	}
 }
 
 class Hambriento inherits Estado {
-	
-	constructor () = super("hambriento")
+	var property nombre = "hambriento"
 	 
 	method hacerQueComa(mascota) { 
 		mascota.poneteContento()
@@ -50,8 +46,7 @@ class Hambriento inherits Estado {
 
 class Triste inherits Estado {
 	const fechaInicio = new Date()
-	
-	constructor () = super("triste")
+	var property nombre = "triste"
 	
 	method hacerQueComa(mascota) { 
 		if (self.haceMuchoQueEstaTriste())
