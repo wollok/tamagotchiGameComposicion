@@ -52,7 +52,7 @@ class Triste inherits Estado {
 		if (self.haceMuchoQueEstaTriste())
 			mascota.poneteContento()
 		else
-			throw new Exception("No quiero comer, estoy triste!")
+			throw new Exception(message = "No quiero comer, estoy triste!")
 	}
 	
 	method hacerQueJuegue(mascota) {

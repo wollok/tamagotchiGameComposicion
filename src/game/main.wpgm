@@ -19,7 +19,7 @@ program tamagotchi {
 	keyboard.space().onPressDo { 
 		const colliders = game.colliders(mascota)
 		if (colliders.isEmpty()) 
-			throw new Exception("No hay nada aquí")
+			throw new Exception(message = "No hay nada aquí")
 		colliders.head().interactua(mascota)
 	}
 	
