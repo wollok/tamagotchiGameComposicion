@@ -14,7 +14,7 @@
 
 ## ¿Cómo jugar?
 ![juego](/assets/juego.png)
-El joistick hace **jugar** al Tamagotchi
+El joystick hace **jugar** al Tamagotchi
 
 ![comida](/assets/comida.png)
 El plato hace **comer** al Tamagotchi

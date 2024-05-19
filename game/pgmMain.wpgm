@@ -3,23 +3,23 @@ import visuales.*
 import wollok.game.*
 
 program tamagotchi {
-	var mascota = new Mascota()
+	const mascota = new Mascota()
 	
 	game.title("Tamagotchi")
 	game.height(10)
 	game.width(10)
 	game.ground("suelo.png")
 	
-	game.addVisualIn(comida, game.at(1, 1))
-	game.addVisualIn(juego, game.at(1, 6))
-	game.addVisualIn(companiera, game.at(6, 1))
-	game.addVisualIn(pozo, game.at(6, 6))
-	game.addVisualCharacterIn(mascota, game.center())
+	game.addVisual(comida)
+	game.addVisual(juego)
+	game.addVisual(companiera)
+	game.addVisual(pozo)
+	game.addVisualCharacter(mascota)
 	
 	keyboard.space().onPressDo { 
 		const colliders = game.colliders(mascota)
 		if (colliders.isEmpty()) 
-			throw new Exception(message = "No hay nada aquí")
+			throw new DomainException(message = "No hay nada aquí")
 		colliders.head().interactua(mascota)
 	}
 	

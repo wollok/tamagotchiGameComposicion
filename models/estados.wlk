@@ -1,13 +1,5 @@
-class Estado {
-	
-	method estaContento() = self.nombre() == "contento"
-	method estaHambriento() = self.nombre()== "hambriento"
-	method estaTriste() = self.nombre()== "triste"
-	
-	method nombre()
-}
 
-class Contento inherits Estado {
+class Contento {
 	var property nombre = "contento"
 	var cantVecesQueJugo = 0
 	
@@ -28,7 +20,7 @@ class Contento inherits Estado {
 	}
 }
 
-class Hambriento inherits Estado {
+class Hambriento {
 	var property nombre = "hambriento"
 	 
 	method hacerQueComa(mascota) { 
@@ -40,11 +32,12 @@ class Hambriento inherits Estado {
 	}
 	
 	method hacerQueJuegueCon(mascota, companiero) {
-		//No le pinta jugar con nadie
+		// No le pinta jugar con nadie
+		mascota
 	}
 }
 
-class Triste inherits Estado {
+class Triste {
 	const fechaInicio = new Date()
 	var property nombre = "triste"
 	

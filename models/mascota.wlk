@@ -1,8 +1,10 @@
 import estados.*
+import wollok.game.*
 
 class Mascota {
 	var nivelDeFelicidad = 0
 	var estado = new Contento()
+	var property position = game.center()
 	
 	method come() { estado.hacerQueComa(self) }
 	
@@ -20,9 +22,9 @@ class Mascota {
 	method felicidad() = nivelDeFelicidad
 	
 	//Testing
-	method estaContento() = estado.estaContento()
-	method estaHambriento() = estado.estaHambriento()
-	method estaTriste() = estado.estaTriste()
+	method estaContento() = estado.nombre() == "contento"
+	method estaHambriento() = estado.nombre() == "hambriento"
+	method estaTriste() = estado.nombre() == "triste"
 	
 	//Wollok-Game
 	method image() = "tamagotchi-" + estado.nombre() + ".png"
