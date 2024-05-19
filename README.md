@@ -1,6 +1,6 @@
 # Tamagotchi
  
-[![Build Status](https://travis-ci.org/wollok/tamagotchiGameComposicion.svg?branch=master)](https://travis-ci.org/wollok/tamagotchiGameComposicion)
+[![Build Status](https://github.com/wollok/tamagotchiGameComposicion/actions/workflows/ci.yml/badge.svg)](https://github.com/wollok/tamagotchiGameComposicion/actions/workflows/ci.yml)
 
 
 ### ¡Juegue al legendario Tamagotchi de la mano de Wollok!
