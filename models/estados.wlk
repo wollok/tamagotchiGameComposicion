@@ -45,7 +45,7 @@ class Triste {
 		if (self.haceMuchoQueEstaTriste())
 			mascota.poneteContento()
 		else
-			throw new Exception(message = "No quiero comer, estoy triste!")
+			mascota.error("No quiero comer, estoy triste!")
 	}
 	
 	method hacerQueJuegue(mascota) {
