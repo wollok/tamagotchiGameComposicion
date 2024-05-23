@@ -8,7 +8,7 @@ program tamagotchi {
 	game.title("Tamagotchi")
 	game.height(10)
 	game.width(10)
-	game.boardGround("suelo.png")
+	game.boardGround("sueloLindo.jpg")
 	
 	game.addVisual(comida)
 	game.addVisual(juego)
@@ -26,6 +26,4 @@ program tamagotchi {
 	game.say(mascota, "Presiona ESPACIO para interactuar con los objetos")
 	
 	game.start()
-
-	game.boardGround("suelo.png")
 }
